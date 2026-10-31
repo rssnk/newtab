@@ -6,6 +6,7 @@
   <title>new tab</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background-color: #000000 }
     #vanta-background { width: 100vw; height: 100vh; position: relative; }
   </style>
 </head>
@@ -15,18 +16,38 @@
 
   <script src="js/three.min.js"></script>
   <script src="js/vanta.net.min.js"></script>
+  <script src="js/vanta.birds.min.js"></script>
   <script>
-    VANTA.NET({
-      el: "#vanta-background",
-      mouseControls: false,
-      touchControls: false,
-      gyroControls: false,
-      minHeight: 200.00,
-      minWidth: 200.00,
-      scale: 0.95,
-      scaleMobile: 1.00,
-      backgroundColor: 0x0
-    })
+    let n = Math.floor(Math.random() * 2);
+    if (n === 1) {
+        VANTA.NET({
+          el: "#vanta-background",
+          mouseControls: true,
+          touchControls: false,
+          gyroControls: false,
+          minHeight: 200.00,
+          minWidth: 200.00,
+          scale: 0.95,
+          scaleMobile: 1.00,
+          backgroundColor: 0x0,
+          color: 0xffffff
+        })
+    } else {
+        VANTA.BIRDS({
+          el: "#vanta-background",
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: false,
+          minHeight: 200.00,
+          minWidth: 200.00,
+          scale: 1.00,
+          scaleMobile: 1.00,
+          backgroundColor: 0x0,
+          color1: 0x0,
+          color2: 0xffffff,
+          colorMode: "lerpGradient"
+        })
+    }
   </script>
 
 </body>
