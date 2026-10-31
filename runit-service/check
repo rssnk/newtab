@@ -1,0 +1,2 @@
+#!/bin/sh
+exec curl -fsS localhost:1488 > /dev/null
